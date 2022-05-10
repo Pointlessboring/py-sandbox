@@ -1,0 +1,6 @@
+size = int(input("Greetings, how many people are in your party? "))
+
+if size >8:
+    print(f"\nYou will need to wait a little for a party of {size} people.")
+else:
+    print("\nPlease follow me, your table is ready.")
