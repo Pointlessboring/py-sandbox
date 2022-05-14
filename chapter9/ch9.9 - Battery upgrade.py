@@ -6,6 +6,7 @@ class Car:
         self.model = model
         self.year = year
         self.odometer_reading = 0
+        self.gas_tank = 0
 
     def get_descriptive_name(self):
         """Return a neatly formatted descriptive name"""
@@ -31,6 +32,15 @@ class Car:
         else: 
             print("You can't roll back an odometer")
     
+    def fill_gas_tank(self):
+        """Method to fill the gas tank"""
+        print("Gas tank has been filled")
+        self.gas_tank = 100
+
+    def read_tank_indicator(self):
+        """Return the gas tank indicator level"""
+        return self.gas_tank
+
 class Battery:
     """A simple attempt to model a battery for an electric car."""
 
@@ -70,3 +80,24 @@ class ElectricCar(Car):
     def fill_gas_tank(self):
         """Overrides the Super class method as we have no gas tank"""
         print("This car does not have a gas tank")
+
+
+my_new_car = Car('audi', 'a4', 2019)
+
+print(my_new_car.get_descriptive_name())
+print(f"Gas tank level is at {my_new_car.read_tank_indicator()}%.")
+my_new_car.fill_gas_tank()
+
+print(f"Gas tank level is at {my_new_car.read_tank_indicator()}%.")
+
+### Child class specific code
+
+print("\n")
+my_tesla = ElectricCar('tesla', 'model', 2019)
+print(my_tesla.get_descriptive_name())
+my_tesla.battery.describe_battery()
+my_tesla.fill_gas_tank()
+my_tesla.battery.get_range()
+
+my_tesla.battery.upgrade_battery()
+my_tesla.battery.get_range()
