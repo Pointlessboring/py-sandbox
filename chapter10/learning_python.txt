@@ -1,0 +1,7 @@
+In Python, you can print text
+In Python, you can loop on variables
+In Python, you can make list
+In Python, you can test for equality or values
+In Python, you can create classes
+In Python, you can open files
+In Python, you can create random numbers
