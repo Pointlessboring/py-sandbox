@@ -11,7 +11,7 @@ class NamesTestCase(unittest.TestCase):
 	
 	def test_first_last_middle(self):
 		"""Do names like Wolfgang Amadeus Mozart work?"""
-		formatted_name = get_formatted_name('Wolfgang', 'Mozart',/ 'Amadeus')
+		formatted_name = get_formatted_name('Wolfgang', 'Mozart', 'Amadeus')
 		self.assertEqual(formatted_name, 'Wolfgang Amadeus Mozart')
 	
 if __name__ == '__main__':
