@@ -3,24 +3,25 @@ from plotly import offline
 
 from die import Die
 
-# Create two D8 dice.
+# Create 3D6 dice.
 
-die_1 = Die(8)
-die_2 = Die(8)
+die_1 = Die(6)
+die_2 = Die(6)
+die_3 = Die(6)
 
 # Make some random rolls and store them in a list
 results = []
 number_roll = 1000
 
 for roll_num in range(number_roll):
-    result = die_1.roll() + die_2.roll()
+    result = die_1.roll() + die_2.roll() + die_3.roll()
     results.append(result)
 
 # Analysze the results
 
 frequencies = []
-max_result = die_1.num_sides + die_2.num_sides
-for value in range(2,  max_result+1):
+max_result = die_1.num_sides + die_2.num_sides + die_3.num_sides
+for value in range(3,  max_result+1):
     frequency = results.count(value)
     frequencies.append(frequency)
 
@@ -31,6 +32,8 @@ data = [Bar(x=x_values, y=frequencies)]
 
 x_axis_config = {'title': 'Result', 'dtick': 1}
 y_axis_config = {'title': 'Frequency of Result'}
-my_layout = Layout(title=f'Results of rolling 2D8 {number_roll} times',
+my_layout = Layout(title=f'Results of rolling 3D6 {number_roll} times',
                     xaxis=x_axis_config, yaxis=y_axis_config)
-offline.plot({'data': data, 'layout': my_layout}, filename='2d8.html')
+offline.plot({'data': data, 'layout': my_layout}, filename='3d6.html')
+
+

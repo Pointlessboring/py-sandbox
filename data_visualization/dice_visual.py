@@ -3,7 +3,7 @@ from plotly import offline
 
 from die import Die
 
-# Create two D6 dice.
+# Create two dice.
 
 die_1 = Die()
 die_2 = Die(10)
