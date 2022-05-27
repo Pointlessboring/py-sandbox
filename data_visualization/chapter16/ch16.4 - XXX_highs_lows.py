@@ -10,7 +10,7 @@ with open(filename) as f:
     reader = csv.reader(f)
     header_row = next(reader)
     
-    # Sample code to print header information. Later commented out.
+    # Put headers in list so we can search on them later.
     headers = []      
     for index, column_header in enumerate(header_row):
         headers.append(column_header)
