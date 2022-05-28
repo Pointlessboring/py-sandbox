@@ -1,4 +1,3 @@
-from email import header
 import requests
 
 # Make API call and store the response.
