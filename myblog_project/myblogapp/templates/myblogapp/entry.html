@@ -1,0 +1,13 @@
+{% extends 'myblogapp/base.html' %}
+
+{% block content %}
+
+  <p>Blog Entry: </p>
+  <ul>
+      <p>{{ entry.date_added|date:'M d, Y H:i' }}</p>
+      <p>{{ entry.title }}</p>
+      <p>{{ entry.text }}</p>
+      <a href="{% url 'myblogapp:edit_entry' entry.id %}">Edit entry</a>
+
+  {% endblock content %} 
+  
