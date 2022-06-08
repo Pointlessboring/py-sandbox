@@ -15,6 +15,8 @@
 # Step 6: Refactoring
 # Step 7: cleaning up
 
+# Final: 
+
 import random
 import timeit
 from datetime import datetime, timedelta
@@ -25,7 +27,7 @@ from matplotlib.pyplot import pause
 Jan1st = datetime.strptime('01/01/01', "%m/%d/%y")
 
 def main():
-
+    """An application to do Monte Carlo type simulations. """
     MAX_TEST = 100000
     qty_test = 0
     size = 0
@@ -88,6 +90,7 @@ def main():
     print(f"Program ran in {runtime} seconds.")
 
 def get_group(size):
+    """Returns a list of random numbers that will later be added to Jan 1st to equal a date."""
     return [random.randint(0,364) for x in range (size)]
 
 def get_match(numbers):
@@ -100,6 +103,7 @@ def test_match(numbers):
     return numbers != list(dict.fromkeys(numbers))
 
 def testing(tests, numbers, quick, details):
+    """Testing function that selects between the 2 testing options and the optional display."""
     if quick:
         # The quick version only check for a match. Does not return the matches.
         if test_match(numbers):
