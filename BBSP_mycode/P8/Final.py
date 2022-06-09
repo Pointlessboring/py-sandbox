@@ -92,4 +92,4 @@ if __name__ == '__main__':
         main()
     except KeyboardInterrupt:
         print()
-        print('=- Insert name of program -=, by @PointlessBoring')
+        print('=- Calendar Generation -=, by @PointlessBoring')
