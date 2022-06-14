@@ -1,0 +1,29 @@
+
+import numpy as np
+
+HEIGHT = 6
+WIDTH = 6
+CHAR_ALIVE = '#'    # Character for living cells
+CHAR_DEAD = 'O'     # Character for dead cells
+PROB = 10           # Probability of being alive at start
+
+state = np.empty((HEIGHT,WIDTH),dtype = int)
+n = 1
+for i in range(HEIGHT):
+    for j in range(WIDTH):
+        state[i,j] = n
+        n += 1
+
+print(type(state))
+
+print (state)
+print(state[0:-2,0:-2])
+print(state[0:-2,1:-1])
+print(state[0:-2,2:])
+print(state[1:-1,0:-2])
+print(state[1:-1,2:])
+
+n = (state[0:-2,0:-2] + state[0:-2,1:-1] + state[0:-2,2:] +
+     state[1:-1,0:-2] + state[1:-1,2:] + state[2:,0:-2] +
+     state[2:,1:-1] + state[2:,2:])
+

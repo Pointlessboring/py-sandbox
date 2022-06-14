@@ -1,0 +1,6 @@
+import numpy as np
+
+size = (4,4)
+state = np.random.randint(2, size = size)
+
+print(state)
