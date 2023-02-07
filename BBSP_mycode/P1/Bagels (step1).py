@@ -1,5 +1,4 @@
 # Step1 : Generate the random number
-# Step2 : Print messages to user
 
 import random
 

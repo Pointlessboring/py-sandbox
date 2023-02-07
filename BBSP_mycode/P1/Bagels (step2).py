@@ -32,6 +32,7 @@ def main():
             if len(guess) <= MAX_DIGITS and guess.isdecimal():
                 print("valid input")
                 guess_no += 1
+
     
 
 def get_secret_number(length):

@@ -38,7 +38,6 @@ def main():
                     break
                 else: 
                     guess_no += 1
-    
 
 def get_secret_number(length):
     base = [str(x) for x in range(0,10)]
