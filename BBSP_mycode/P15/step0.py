@@ -1,6 +1,4 @@
-import random, sys, time
-
-from numpy import true_divide
+import random, time
 
 # Set up the constants:
 WIDTH = 70  # (!) Try changing this to 10 or 30.

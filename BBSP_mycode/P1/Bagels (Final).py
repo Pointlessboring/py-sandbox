@@ -53,7 +53,7 @@ def main():
                 print(f"Invalid input! Enter {MAX_DIGITS} digits only")
         if not won:
             print(f"You did not find the secret. It was {goal}\n")
-        again = input("Do you want to play again? (enter 'no' to stop)")
+        again = input("Do you want to play again? (enter 'no' to stop) ")
         if again == 'no':
             break
 
