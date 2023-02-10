@@ -18,6 +18,7 @@ except ImportError:
 
 # Set up the constants:
 WIDTH, HEIGHT = bext.size()
+
 # We can't print to the last column on Windows without it adding a
 # newline automatically, so reduce the width by one:
 WIDTH -= 1
@@ -130,7 +131,7 @@ def main():
             # Draw the logos at their new location:
             bext.goto(logo[X], logo[Y])
             bext.fg(logo[COLOR])
-            print('DVD', end='')
+            print('TEXTDVD', end='')
 
         bext.goto(0, 0)
 
