@@ -6,7 +6,7 @@
 # This is acheive using datetime.timedelta(days=X).
 
 # Step 1: Basic structure, test on timedelta
-# Step 2: Set-up Jan1st+365 + data conversion
+# Step 2: Set-up Jan1st + 365 + data conversion
 
 import random
 from datetime import datetime, timedelta
@@ -22,6 +22,7 @@ def main():
         print( bday.strftime("%b %d"))
 
 def get_group(number):
+    """Returns a list of random numbers that will later be added to Jan 1st to equal a date."""
     return [random.randint(0,364) for x in range (number)]
 
 # If the program is run (instead of imported), run the game:

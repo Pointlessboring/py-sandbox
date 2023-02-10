@@ -22,10 +22,6 @@ import timeit
 from datetime import datetime, timedelta
 from collections import Counter
 
-from matplotlib.pyplot import pause
-
-Jan1st = datetime.strptime('01/01/01', "%m/%d/%y")
-
 def main():
     """An application to do Monte Carlo type simulations. """
     MAX_TEST = 100000
@@ -60,11 +56,12 @@ def main():
     numbers = get_group(size)
     dups = get_match(numbers)
 
+    # Convert days and duplicates into list of strings
+    bdays = get_textdate(numbers)
+    ddays = get_textdate(dups)
+
     # Print the initial birthdays
-    bdays = [(Jan1st+timedelta(days=n)).strftime("%b %d") for n in numbers]
-    ddays = [(Jan1st+timedelta(days=n)).strftime("%b %d") for n in dups]
-    print(bdays)
-    print("\n")
+    print("\n",bdays,"\n")
     
     if dups == []:
         print("There are no duplicates in the initial group")
@@ -95,12 +92,17 @@ def get_group(size):
 
 def get_match(numbers):
     """ Counts number of occurence per item and store dups in variable."""
-    counts = dict(Counter(numbers))
+    counts = Counter(numbers) # Counter returns a dictionary of pairs {Item: Count of item)}
     return [key for key, value in counts.items() if value>1]
 
 def test_match(numbers):
     """ Quick validation on existence of matches without returning the matchs"""
     return numbers != list(dict.fromkeys(numbers))
+
+def get_textdate(numlist):
+    """ Converts list of num to list of Str dates"""
+    Jan1st = datetime.strptime('01/01/01', "%m/%d/%y")
+    return [(Jan1st + timedelta(days=n)).strftime("%b %d") for n in numlist]
 
 def testing(tests, numbers, quick, details):
     """Testing function that selects between the 2 testing options and the optional display."""
@@ -114,7 +116,7 @@ def testing(tests, numbers, quick, details):
 
         # Details flag is set. Print the collision dates
         if details: 
-            ddays = [(Jan1st+timedelta(days=n)).strftime("%b %d") for n in dups]
+            ddays = get_textdate(dups)
             if dups != []:
                 print(f"({tests}): Duplicate dates are: {ddays}")
                 return 1

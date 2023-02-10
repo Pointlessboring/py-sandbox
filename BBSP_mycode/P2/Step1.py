@@ -17,9 +17,10 @@ def main():
     print(Jan1st)
     print(int_list)
     for x in int_list:
-        print(Jan1st+timedelta(days=x))
+        print(Jan1st + timedelta(days=x))
 
 def get_group(number):
+    """Returns a list of random numbers that will later be added to Jan 1st to equal a date."""
     return [random.randint(0,364) for x in range (number)]
 
 # If the program is run (instead of imported), run the game:
