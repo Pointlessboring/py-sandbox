@@ -20,7 +20,7 @@ def main():
             key = 0
     key = int(key)
     print("Please enter the message to process")
-    msg = input('> ')
+    msg = input('> ').upper()
 
     if action == 'd':
         print(decrypt(msg, key))
