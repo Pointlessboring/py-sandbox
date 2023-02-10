@@ -8,7 +8,7 @@ HEARTS   = chr(9829) # Character 9829 is '♥'.
 DIAMONDS = chr(9830) # Character 9830 is '♦'.
 SPADES   = chr(9824) # Character 9824 is '♠'.
 CLUBS    = chr(9827) # Character 9827 is '♣'.
-SUIT     = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+SUIT     = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
 BACKSIDE = 'backside'
 
 def main():
@@ -16,13 +16,19 @@ def main():
     for suit in (HEARTS, DIAMONDS, SPADES, CLUBS):
         for rank in SUIT:
             deck.append( (rank, suit) )
-
+    
+    # Simple test to print each card
+    for card in deck:
+        displayCards([card])
+    
+    print(deck)
 
 def displayCards(cards):
     """Display all the cards in the cards list."""
     rows = ['', '', '', '', '']  # The text to display on each row.
 
-    for i, card in enumerate(cards):
+#    for i, card in enumerate(cards):
+    for card in cards:
         rows[0] += ' ___  '  # Print the top line of the card.
         if card == BACKSIDE:
             # Print a card's back:
