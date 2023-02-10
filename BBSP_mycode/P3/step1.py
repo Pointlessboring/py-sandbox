@@ -24,9 +24,9 @@ bitmap = """
 message = input('> ')
 if message != '':
     count = 0
-    for c in bitmap:
-        if c.isprintable() and c != ' ':
-            c = message[count%len(message)]
-            count += 1
-        print(c, end='')
-print()
+    for c in bitmap:                          # selects each char in bitmap including spaces, * and \n
+        if c.isprintable() and c != ' ':      # isprintable() skips '\n' characters
+            c = message[count%len(message)]   # Modulo function loops over input strings
+            count += 1                        
+        print(c, end='')                      # Prints the character from input string or \n
+print()                                       # Prints a newline.
