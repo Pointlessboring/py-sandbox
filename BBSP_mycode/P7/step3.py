@@ -4,6 +4,7 @@
 
 # Step #1: Started from the cypher P6
 # Step #2: Fixed errors (range, crypt function)
+# Step #3: Improved readability of Crypt function
 
 def main():
     print("Please enter the message to process")
@@ -20,7 +21,9 @@ def crypt(text, offset):
 
     """ See excel worksheet to understand the modulo function """
 
-    return ''.join( [ x if ord(x) not in range(65,90) else chr((((ord(x)-64) + offset - 1 )%26) + 64 + 1 ) for x in text] )
+    return ''.join( [ x if ord(x) not in range(65,90) 
+                            else chr((  ( ord(x) - 64  - 1 + offset) % 26) + 64 + 1) 
+                                for x in text ])
 
 # If the program is run (instead of imported), run main():
 if __name__ == '__main__':
