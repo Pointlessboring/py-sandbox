@@ -16,7 +16,7 @@ DOW = [date.strftime((date.today() +
        timedelta(d - date.isoweekday(date.today()))) ,"%A") 
             for d in range (7)]
 
-MOY = [date.strftime( date(1,m+1,1) ,"%B") for m in range (12)]
+MOY = [date.strftime( date(1,m + 1,1) ,"%B") for m in range (12)]
 
 def main():
     """This function create a printable calendar for a given month."""
@@ -48,6 +48,7 @@ def main():
 
     # Save the calendar to a file
     filename = f"{year}_{month}_calendar.txt"
+    
     with open(filename, 'w') as f:
         f.write(caltext)
     print(f"\nCalendar was saved to {filename}")
@@ -67,6 +68,7 @@ def drawCalendar(year, month):
     blankRow = ('|          ' * 7) + '|\n'
 
     # Calculate the date of the top left square.
+    # top left date is 1st of the month MINUS the Day Number of this 1st day of month.
     ldate = date(year, month, 1) - timedelta(date(year, month, 1).isoweekday())
     
     while True: # Loop for every week in the month

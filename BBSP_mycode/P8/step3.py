@@ -6,7 +6,6 @@
 # Step 2: Write calendar drawing function
 # Step 3: Clean up
 
-from calendar import weekday
 from datetime import date, datetime, timedelta
 
 # Build string of weekdays starting Sunday
@@ -14,8 +13,8 @@ from datetime import date, datetime, timedelta
 #  but it gave an opportunity to test date functions
 
 DOW = [date.strftime((date.today() + 
-       timedelta(d - date.isoweekday(date.today()))) ,"%A") 
-            for d in range (7)]
+            timedelta(d - date.isoweekday(date.today()))) ,"%A") 
+                for d in range (7)]
 
 MOY = [date.strftime( date(1,m+1,1) ,"%B") for m in range (12)]
 
